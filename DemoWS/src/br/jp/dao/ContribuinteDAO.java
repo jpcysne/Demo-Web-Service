@@ -6,8 +6,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.management.RuntimeErrorException;
 
 import br.jp.Connection.ConnectionFactoryBD;
+import br.jp.modelo.Contencioso;
 import br.jp.modelo.Contribuinte;
 
 public class ContribuinteDAO {
@@ -47,6 +52,54 @@ private Connection conexao;
 	}
 
 }
+	
+	public List<Contencioso> getLista(){
+		try {
+			List<Contencioso> contenciosos=new ArrayList<Contencioso>();
+			PreparedStatement stmt = this.conexao.prepareStatement("select * from contencioso");
+			ResultSet rs=stmt.executeQuery();
+			
+			while (rs.next()) {
+				Contencioso contencioso=new Contencioso();
+				contencioso.setAnodoAuto(rs.getInt(""));
+				contencioso.setAutuacao(rs.getDate(""));
+				contencioso.setBairro(rs.getString("bairro"));
+				contencioso.setCEP(rs.getString("cep"));
+				contencioso.setCGM(rs.getString("cgm"));
+				contencioso.setCidade(rs.getString("cidade"));
+				contencioso.setCiencia(rs.getDate(""));
+				contencioso.setCodigo(rs.getString("codigo"));
+				contencioso.setComplemento(rs.getString("complemento"));
+				contencioso.setDateCalCorrecao(rs.getDate(""));
+				contencioso.setDescriInfracao(rs.getString(""));
+				contencioso.setDesignante(rs.getString("designante"));
+				contencioso.setDiasPrazo(rs.getInt(""));
+				contencioso.setEndereco(rs.getString("endereco"));
+				contencioso.setEstado(rs.getString("estado"));
+				contencioso.setInicioProcesso(rs.getDate(""));
+				contencioso.setMercadoriaPerecivel(rs.getBoolean(""));
+				contencioso.setMulta(rs.getFloat(""));
+				contencioso.setNome(rs.getString("nome"));
+				contencioso.setNumero(rs.getString("numero"));
+				contencioso.setNumeroAuto(rs.getString(""));
+				contencioso.setNumeroProcesso(rs.getString(""));
+				
+				
+				
+				
+				
+				
+				
+				contenciosos.add(contencioso);
+			}
+			rs.close();
+			stmt.close();
+			return contenciosos;
+			
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
 	public Contribuinte getInfracao(int codInfracao){
 		try {
 			PreparedStatement stmt = this.conexao.prepareStatement("select * from infracao where cod_infracao=?");
