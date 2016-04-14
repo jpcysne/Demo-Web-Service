@@ -116,6 +116,8 @@ private Connection conexao;
 			throw new RuntimeException(e);
 		}
 	}
+	
+	
 	public Contribuinte getInfracao(int codInfracao){
 		try {
 			PreparedStatement stmt = this.conexao.prepareStatement("select * from infracao where cod_infracao=?");
