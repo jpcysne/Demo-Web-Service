@@ -47,6 +47,18 @@ private Connection conexao;
 	}
 
 }
+	public Contribuinte getInfracao(int codInfracao){
+		try {
+			PreparedStatement stmt = this.conexao.prepareStatement("select * from infracao where cod_infracao=?");
+			
+			stmt.setInt(1, codInfracao);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
+		
+	}
 	
 	public Contribuinte getContribuinte(int codigo){
 		
