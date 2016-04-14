@@ -61,6 +61,7 @@ private Connection conexao;
 			
 			while (rs.next()) {
 				Contencioso contencioso=new Contencioso();
+				
 				contencioso.setAnodoAuto(rs.getInt(""));
 				contencioso.setAutuacao(rs.getDate(""));
 				contencioso.setBairro(rs.getString("bairro"));
@@ -83,10 +84,25 @@ private Connection conexao;
 				contencioso.setNumero(rs.getString("numero"));
 				contencioso.setNumeroAuto(rs.getString(""));
 				contencioso.setNumeroProcesso(rs.getString(""));
-				
-				
-				
-				
+				contencioso.setNumeroProcessoAnt(rs.getString(""));
+				contencioso.setOrgaoDemanda(rs.getString(""));
+				contencioso.setOrgaoInicioTram(rs.getString(""));
+				contencioso.setOrgaoLocal(rs.getString(""));
+				contencioso.setPenalidade(rs.getString(""));
+				contencioso.setPeriodoInfracao(rs.getString(""));
+				contencioso.setPeticionante(rs.getString(""));
+				contencioso.setPrazo(rs.getDate(""));
+				contencioso.setPrincipal(rs.getFloat(""));
+				contencioso.setProcesso(rs.getDate(""));
+				contencioso.setRegistro(rs.getDate(""));
+				contencioso.setSPU(rs.getString(""));
+				contencioso.setSupervisorFiscal(rs.getString(""));
+				contencioso.setTipoAuto(rs.getString(""));
+				contencioso.setTipoAutuado(rs.getString(""));
+				contencioso.setTipoProcesso(rs.getString(""));
+				contencioso.setUFIRCE(rs.getFloat(""));
+				contencioso.setValorBaseCal(rs.getFloat(""));
+				contencioso.setValorCausa(rs.getFloat(""));
 				
 				
 				
