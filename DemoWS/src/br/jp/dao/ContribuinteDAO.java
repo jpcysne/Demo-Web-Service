@@ -116,12 +116,71 @@ private Connection conexao;
 			throw new RuntimeException(e);
 		}
 	}
+	/*
+	public Contencioso getInfracao(int cod){
+		
+		switch (cod) {
+		case 1:
+			
+			Contencioso contencioso=new Contencioso();
+			
+			contencioso.setAnodoAuto(2005);
+			contencioso.setAutuacao("15/02/2006");
+			contencioso.setBairro();
+			contencioso.setCEP(rs.getString("cep"));
+			contencioso.setCGM(rs.getString("cgm"));
+			contencioso.setCidade(rs.getString("cidade"));
+			contencioso.setCiencia(rs.getDate(""));
+			contencioso.setCodigo(rs.getString("codigo"));
+			contencioso.setComplemento(rs.getString("complemento"));
+			contencioso.setDateCalCorrecao(rs.getDate(""));
+			contencioso.setDescriInfracao(rs.getString(""));
+			contencioso.setDesignante(rs.getString("designante"));
+			contencioso.setDiasPrazo(rs.getInt(""));
+			contencioso.setEndereco(rs.getString("endereco"));
+			contencioso.setEstado(rs.getString("estado"));
+			contencioso.setInicioProcesso(rs.getDate(""));
+			contencioso.setMercadoriaPerecivel(rs.getBoolean(""));
+			contencioso.setMulta(rs.getFloat(""));
+			contencioso.setNome(rs.getString("nome"));
+			contencioso.setNumero(rs.getString("numero"));
+			contencioso.setNumeroAuto(rs.getString(""));
+			contencioso.setNumeroProcesso(rs.getString(""));
+			contencioso.setNumeroProcessoAnt(rs.getString(""));
+			contencioso.setOrgaoDemanda(rs.getString(""));
+			contencioso.setOrgaoInicioTram(rs.getString(""));
+			contencioso.setOrgaoLocal(rs.getString(""));
+			contencioso.setPenalidade(rs.getString(""));
+			contencioso.setPeriodoInfracao(rs.getString(""));
+			contencioso.setPeticionante(rs.getString(""));
+			contencioso.setPrazo(rs.getDate(""));
+			contencioso.setPrincipal(rs.getFloat(""));
+			contencioso.setProcesso(rs.getDate(""));
+			contencioso.setRegistro(rs.getDate(""));
+			contencioso.setSPU(rs.getString(""));
+			contencioso.setSupervisorFiscal(rs.getString(""));
+			contencioso.setTipoAuto(rs.getString(""));
+			contencioso.setTipoAutuado(rs.getString(""));
+			contencioso.setTipoProcesso(rs.getString(""));
+			contencioso.setUFIRCE(rs.getFloat(""));
+			contencioso.setValorBaseCal(rs.getFloat(""));
+			contencioso.setValorCausa(rs.getFloat(""));
+			
+			return 
+			break;
+			
+		case 2:
+			return 
+			break;
+		default:
+			break;
+		}
+	}
 	
-	
+	/*
 	public Contribuinte getInfracao(int codInfracao){
 		try {
 			PreparedStatement stmt = this.conexao.prepareStatement("select * from infracao where cod_infracao=?");
-			
 			stmt.setInt(1, codInfracao);
 			
 		} catch (Exception e) {
@@ -129,7 +188,7 @@ private Connection conexao;
 		}
 		return null;
 		
-	}
+	}*/
 	
 	public Contribuinte getContribuinte(int codigo){
 		
